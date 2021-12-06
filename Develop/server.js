@@ -4,12 +4,13 @@ const fs = require('fs')
 const path = require('path')
 const app = express();
 const db = require("./db/db.json")
+const PORT = process.env.PORT || 3001;
 
 express.urlencoded({ extended: true })
 app.use(express.static('public'));
 app.use(express.json());
 app.listen(3001, () => {
-    console.log(`Server on port 3001!`)
+    console.log(`Server on port ${PORT}`)
 })
 
 app.get('/', (req, res) => {
