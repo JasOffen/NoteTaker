@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 3001;
 express.urlencoded({ extended: true })
 app.use(express.static('public'));
 app.use(express.json());
-app.listen(3001, () => {
-    console.log(`Server on port ${PORT}`)
-})
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
+});
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
