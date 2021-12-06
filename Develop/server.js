@@ -16,12 +16,19 @@ app.listen(PORT, () => {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 })
+app.get('/assets/css', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/assets/css'));
+})
+app.get('/assets/js', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/assets/js'));
+})
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 })
 app.get('/api/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './db/db.json'));
 })
+
 
 app.post('/api/notes', (req, res) => {
     req.body.id = db.length.toString();
